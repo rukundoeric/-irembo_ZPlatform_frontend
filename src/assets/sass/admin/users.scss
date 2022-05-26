@@ -1,0 +1,85 @@
+.users {
+    .div1 {
+      background-color: white;
+    }
+    .div2 {
+      background-color: white;
+    }
+  }
+
+  .data-table {
+    max-height: calc(100vh - 290px) !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // border: 1px solid red;
+  }
+  
+  .data-table::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  .data-table::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(233, 233, 233, 0.3);
+    border-radius: 0;
+  }
+  
+  .data-table::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: lighten($pColor, $amount: 40);
+  }
+
+  /*******************
+Table Cell
+*******************/
+
+.table-box {
+    display: table;
+    width: 100%;
+  }
+  
+  .cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .table thead th,
+  .table th {
+    font-weight: 500;
+  }
+  
+  .nowrap {
+    white-space: nowrap;
+  }
+  
+  .lite-padding td {
+    padding: 5px;
+  }
+  
+  .v-middle {
+    td,
+    th {
+      vertical-align: middle;
+    }
+  }
+  
+  /*******************
+  Table td vertical middle
+  *******************/
+  
+  .vm.table td,
+  .vm.table th {
+    vertical-align: middle;
+  }
+  
+  .no-th-brd.table th {
+    border: 0px;
+  }
+  
+  .table.no-border {
+    tbody {
+      td {
+        border: 0px;
+      }
+    }
+  }
+  
