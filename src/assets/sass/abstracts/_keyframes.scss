@@ -1,0 +1,60 @@
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0rem rgba($ripple-color, 0.2),
+      0 0 0 5px rgba($ripple-color, 0.2), 0 0 0 10px rgba($ripple-color, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 1rem rgba($ripple-color, 0.2),
+      0 0 0 5px rgba($ripple-color, 0.2), 0 0 0 10px rgba($ripple-color, 0);
+  }
+}
+
+@-webkit-keyframes wheel-up-down {
+  100% {
+    margin-top: 35px;
+  }
+  0% {
+    margin-top: 2px;
+  }
+}
+@-moz-keyframes wheel-up-down {
+  100% {
+    margin-top: 35px;
+  }
+  0% {
+    margin-top: 2px;
+  }
+}
+@keyframes wheel-up-down {
+  100% {
+    margin-top: 35px;
+  }
+  0% {
+    margin-top: 2px;
+  }
+}
+
+
+@keyframes pulse-a {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba($color-accent-1, 0.4);
+    box-shadow: 0 0 0 0 rgba($color-accent-1, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 30px rgba($color-accent-1, 0);
+    box-shadow: 0 0 0 30px rgba($color-accent-1, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba($color-accent-1, 0);
+    box-shadow: 0 0 0 0 rgba($color-accent-1, 0);
+  }
+}
+@keyframes flash-width {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20px;
+  }
+}
