@@ -1,0 +1,121 @@
+.admin {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  .sidebar {
+    background-color: $color_primary_dark;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    pointer-events: none;
+    fill: currentColor;
+  }
+  
+  .dropdown-toggle { outline: 0; }
+  
+  .nav-flush .nav-link {
+    border-radius: 0;
+  }
+  
+  .btn-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .5rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .65);
+    background-color: transparent;
+    border: 0;
+  }
+
+  
+  .btn-toggle[aria-expanded="true"] {
+    i {
+      transform: rotate(90deg);
+    }
+  }
+  
+  .btn-toggle-nav a {
+    display: inline-flex;
+    padding-left: 3.25rem;
+    text-decoration: none;
+  }
+  
+  .scrollarea {
+    overflow-y: auto;
+  }
+  
+  .fw-semibold { font-weight: 600; }
+  .lh-tight { line-height: 1.25; }
+  
+}
+.side-menu-list {
+  max-height: calc(100vh - 150px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.side-menu-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.side-menu-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(233, 233, 233, 0.3);
+  border-radius: 0;
+}
+
+.side-menu-list::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: lighten($pColor, $amount: 40);
+}
+
+.sid-content {
+  position: relative;
+}
+
+.admin-header {
+  // position: absolute;
+  // right: 0;
+  // // left: 0;
+  // top: 0;
+  z-index: 4 !important;
+  background: $color-white !important;
+  box-shadow: $main_shadow !important;
+  // border: 1px solid red;
+}
+
+.dropdown-menu {
+  border-radius: 0 !important;
+  margin-top: 1.4rem !important;
+  width: 18rem !important;
+  padding: 0 !important;
+  border: 0;
+  box-shadow: $second_shadow;
+  
+  .dropdown-divider {
+    padding: 0 !important;
+    color: transparentize($color: $textColor-2, $amount: .5);
+  }
+
+  .dropdown-item {
+    span {
+      font-size: 1.3em;
+      font-family: dosis;
+      color: $textColor-1;
+      i {
+        color: $color-accent-1;
+      }
+    }
+    .count {
+      font-weight: 600;
+      color: $pColor;
+    }
+    &:hover {
+      background-color: transparentize($color: $textColor-2, $amount: .9);
+    }
+  }
+}
