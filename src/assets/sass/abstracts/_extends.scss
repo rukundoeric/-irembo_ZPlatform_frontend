@@ -1,0 +1,14 @@
+%path-bg-gr-1 {
+  background: linear-gradient(
+    90deg,
+    white,
+    rgba(white, 1),
+    rgba(white, .9),
+    rgba(white, .8),
+    rgba(white, .9),
+    rgba(white, 1)
+  ),$banner-bg-1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
