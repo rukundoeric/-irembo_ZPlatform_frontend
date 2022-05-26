@@ -10,10 +10,8 @@ import {
   Email, Password, TCPRemember,
 } from '../shared/Input';
 import { Button, ProgressBar } from '../shared/Elements';
-import Line from '../shared/Line';
 import { ContentHead } from '../shared/Contents';
 import useAuth from '../../hooks/useAuth';
-import GoogleLogin from './GoogleLogin';
 import Alert from '../shared/Alert';
 import { logIn } from '../../api';
 
@@ -99,12 +97,6 @@ function Login({ alert: defaultAlert }) {
                       <Link to="/forgot-password">Forgot password?</Link>
                     </div>
                     <Button label="Sign In" classes="primary-button" />
-                    <Line label="Or" />
-                    <GoogleLogin
-                      handleStatus={status => setStatus(status)}
-                      handleShowAlert={handleShowAlert}
-                      handleSuccess={handleLoginSuccess}
-                    />
                   </form>
                 </div>
               </div>

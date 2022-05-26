@@ -3,24 +3,23 @@
 /* eslint-disable brace-style */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useRef } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Validate } from '../../helpers';
 import {
   Email, Password, TCPPAgree,
 } from '../shared/Input';
 import { Button, ProgressBar } from '../shared/Elements';
-import Line from '../shared/Line';
+// import Line from '../shared/Line';
 import { ContentHead } from '../shared/Contents';
 import VerificationSent from './VerificationSent';
 import { signUp } from '../../api';
-import GoogleLogin from './GoogleLogin';
 import Alert from '../shared/Alert';
-import useAuth from '../../hooks/useAuth';
+// import useAuth from '../../hooks/useAuth';
 
 function SignUp({ alert: defaultAlert }) {
-  const { setAuth } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const { setAuth } = useAuth();
+  // const navigate = useNavigate();
+  // const location = useLocation();
   const [email, setEmail] = useState();
   const [status, setStatus] = useState();
   const [password, setPassword] = useState();
@@ -31,7 +30,7 @@ function SignUp({ alert: defaultAlert }) {
   const [signupSuccess, setSignupSuccess] = useState();
   const [alert, setAlert] = useState(defaultAlert);
   const [showAlert, setShowAlert] = useState(true);
-  const from = location?.state?.from?.pathname || '/';
+  // const from = location?.state?.from?.pathname || '/';
   const form = useRef();
   const canContinue = !!(!emailErrors && !passwordErrors && email && password && agreeToTC);
 
@@ -65,12 +64,7 @@ function SignUp({ alert: defaultAlert }) {
   const handleSignupSuccess = () => {
     setSignupSuccess(true);
   };
-  const handleGoogleLoginSuccess = response => {
-    setEmailErrors(undefined);
-    setPasswordErrors(undefined);
-    setAuth({ ...response });
-    navigate(from, { replace: true });
-  };
+
   const handleSignUp = e => {
     e.preventDefault();
     if (status !== 'pending') {
@@ -131,12 +125,6 @@ function SignUp({ alert: defaultAlert }) {
                     />
                     <TCPPAgree handleAgree={handleAgree} errors={agreeErrors} />
                     <Button label="Sign Up" classes={`primary-button ${(!canContinue || status === 'pending') && 'disabled'} mt-3`} />
-                    <Line label="Or" />
-                    <GoogleLogin
-                      handleStatus={status => setStatus(status)}
-                      handleShowAlert={handleShowAlert}
-                      handleSuccess={handleGoogleLoginSuccess}
-                    />
                   </form>
                 </div>
               </div>
