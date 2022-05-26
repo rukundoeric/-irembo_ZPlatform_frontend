@@ -1,0 +1,30 @@
+.signup-container {
+  background-color: $sColor;
+}
+
+.email-sent {
+  h1{
+    color: $color_accent_2;
+    i {
+      font-size: 2em;
+    }
+  }
+  small {
+    font-size: .8em;
+    color: $textColor-1;
+  }
+  .error {
+    color: $dangerColor;
+  }
+}
+
+.v-comp-1 {
+  input {
+    font-size: .7em !important;
+  }
+}
+
+.v-c-failed{
+  background-color: white;
+  box-shadow: 0 0 7px 0 $bColor;
+}
