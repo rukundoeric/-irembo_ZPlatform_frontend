@@ -1,0 +1,115 @@
+.input-text-content {
+  /* Customize the label (the agree-container) */
+.agree-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  // margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.agree-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ccc;
+  background-color: rgb(254, 254, 254);
+}
+
+/* On mouse-over, add a grey background color */
+.agree-container:hover input ~ .checkmark {
+  background-color: #eee;
+  border: 0;
+}
+
+/* When the checkbox is checked, add a blue background */
+.agree-container input:checked ~ .checkmark {
+  background-color: $pColor;
+  border: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.agree-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.agree-container .checkmark:after {
+  left: 10px;
+  top: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.td-st {
+  a {
+    text-decoration: underline !important;
+    color: $textColor-2;
+    font-weight: 600;
+    &:hover {
+      color: lighten($pColor, $amount: 10);
+    }
+  }
+}
+}
+
+.primary-button {
+  background-color: $pColor;
+  color: white;
+  border: 0;
+  font-family: $poppins;
+  &:hover {
+    background-color: darken($pColor, $amount: 3);
+  }
+}
+
+.primary-button.disabled {
+  background-color: lighten($pColor, $amount: 40);
+}
+
+.input-text-c {
+  input {
+    border-radius: 20px !important;
+  }
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-image: none !important;
+  border-color: #ced4da;
+  padding-right: 0.75em;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid {
+  background-image: none !important;
+  border-color: #ced4da;
+  padding-right: 0.75em;
+}
