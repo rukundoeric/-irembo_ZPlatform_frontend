@@ -1,0 +1,359 @@
+.main_menu {
+  position: absolute;
+  width: 100%;
+  align-content: center;
+  margin-top: 50px;
+  z-index: 4 !important;
+
+  .logo {
+    height: 40px;
+    position: relative;
+    // border: 1px solid red;
+
+    span {
+      color: white;
+      opacity: 0.7;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: $dosis;
+      margin-left: 10px;
+
+      &:after {
+        position: absolute;
+        top: 10px;
+        right: -5px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        content: "";
+        background: $color-accent-1;
+        animation: pulse-a 2s infinite;
+      }
+    }
+  }
+
+  .nav-links {
+    height: 70px;
+    @include ease-transition(display, 0.5s, ease-in-out);
+
+    ul {
+      width: 500px;
+      display: flex;
+      justify-content: space-evenly;
+
+      li {
+        @include flex-center;
+        list-style: none;
+      }
+    }
+
+    a {
+      font-size: 15px;
+      color: white;
+      font-weight: 700;
+      opacity: 1;
+      font-family: $dosis;
+      text-decoration: none;
+      cursor: pointer;
+      @include ease-transition(all, 0.3s, ease-in-out);
+
+      &:hover {
+        transform: scale(1.09);
+        color: $pColor;
+      }
+    }
+  }
+
+  .btn-1 {
+    &:hover {
+      opacity: 1;
+      color: $color-white !important;
+    }
+  }
+}
+
+.header-scrolled {
+  // padding-top: 7px;
+  position: fixed;
+  margin-top: 0 !important;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background: $color-white !important;
+  box-shadow: $main_shadow;
+
+  .logo {
+    span {
+      color: $color-accent-1 !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .nav-links {
+    a {
+      color: $color_gray !important;
+    }
+
+    .btn-1 {
+      color: $color-white !important;
+    }
+  }
+
+  .nav-icon {
+
+    &::after,
+    &::before,
+    .in-d {
+      background-color: $color-accent-1;
+    }
+  }
+}
+
+.nav-menu-lists-scrolled {
+  background-color: $color-white !important;
+
+  .nav-menu-content {
+    .nav-links-menu {
+      ul {
+        li {
+          a {
+            color: $color_gray !important;
+          }
+
+          .btn-1 {
+            color: $color-white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-menu-lists {
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: $color-primary-dark;
+  clip-path: circle(0 at 100% 0%);
+  @include ease-transition(all, 0.5s, ease-in-out);
+  z-index: 3 !important;
+
+  .nav-menu-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex-center;
+
+    .nav-links-menu {
+      width: 70%;
+
+      ul {
+        li {
+          @include flex-center;
+          list-style: none;
+          @include ease-transition(background-color, 0.5s, ease-in-out);
+          height: 70px;
+
+          a {
+            font-size: 20px;
+            color: $color-white-1;
+            font-weight: 700;
+            opacity: 1;
+            text-decoration: none;
+            cursor: pointer;
+            @include ease-transition(all, 0.3s, ease-in-out);
+          }
+
+          &:hover {
+            a {
+              transform: scale(1.09);
+              opacity: 1;
+              color: $pColor;
+            }
+          }
+
+          .btn-1 {
+            font-size: 20px !important;
+            border-radius: 2px;
+            padding: 12px 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+
+
+.user-header {
+  // position: fixed;
+  margin-top: 0 !important;
+  z-index: 4 !important;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  background: $pColor !important;
+  box-shadow: $main_shadow;
+  // border: 1px solid red;
+
+  .user-logo {
+    height: 40px;
+    position: relative;
+    // border: 1px solid red;
+
+    span {
+      color: white;
+      opacity: 0.7;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: $dosis;
+      margin-left: 10px;
+    }
+  }
+
+  a {
+    font-family: dosis;
+    color: darken($color: $textColor-1, $amount: 0.9);
+  }
+
+  .dropdown-menu {
+    border-radius: 0 !important;
+    margin-top: 1.4rem !important;
+    min-width: 18rem;
+    padding: 0 !important;
+    border: 0;
+    box-shadow: $second_shadow;
+
+    .dropdown-divider {
+      padding: 0 !important;
+      color: transparentize($color: $textColor-2, $amount: .5);
+    }
+
+    .dropdown-item {
+      cursor: pointer;
+      span {
+        font-size: 1.3em;
+        font-family: dosis;
+        color: $textColor-1;
+
+        i {
+          color: $color-accent-1;
+        }
+      }
+
+      .count {
+        font-weight: 600;
+        color: $pColor;
+      }
+
+      &:hover {
+        background-color: transparentize($color: $textColor-2, $amount: .9);
+      }
+    }
+  }
+
+  .notifications-item {
+    &:hover {
+      background-color: transparentize($color: $textColor-2, $amount: .9) !important;
+    }
+  }
+
+  .notification {
+    .dropdown-menu {
+      width: 23rem !important;
+    }
+
+    .dropdown-list-image {
+      // position: relative;
+      padding: .5rem;
+      background-color: $pColor;
+    }
+
+    .btn-light {
+      color: #2cdd9b;
+      background-color: #e5f7f0;
+      border-color: #d8f7eb;
+    }
+  }
+
+  .notification,
+  .cart {
+    .micon {
+      cursor: pointer;
+
+      i {
+        color: white !important;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      i.has_some {
+        &:after {
+          position: absolute;
+          top: 7px;
+          right: 24px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          content: "";
+          background: $color-accent-1;
+          animation: pulse-a 2s infinite;
+        }
+      }
+    }
+  }
+}
+
+.profile-pic {
+
+  span {
+    color: white;
+  }
+
+  .profile-pic-n-p {
+    background-color: $color-accent-1;
+    font-size: .7em;
+    font-weight: 500;
+  }
+}
+
+.path-container {
+  // border: 1px solid red;
+  background-color: white;
+  box-shadow: $main_shadow;
+  @extend %path-bg-gr-1;
+  a {
+    color: $textColor-1;
+    font-size: .9em;
+
+    &:hover {
+      color: $pColor;
+    }
+  }
+}
+
+.profile-pic-button {
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparentize($color-primary-dark, $amount: .9);
+  &:hover {
+    background-color: transparentize($color-primary-dark, $amount: .8);
+  }
+}
