@@ -20,13 +20,6 @@
   font-family: "roboto-medium";
   src: url(../fonts/Roboto-Medium.ttf);
 }
-.path-container {
-  background: linear-gradient(90deg, white, white, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), white), url(../images/syringe.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 @keyframes ripple {
   0% {
     box-shadow: 0 0 0 0rem rgba(74, 176, 100, 0.2), 0 0 0 5px rgba(74, 176, 100, 0.2), 0 0 0 10px rgba(74, 176, 100, 0.2);
@@ -952,33 +945,39 @@ input {
     height: 32px;
   }
 }
-.splash h3 {
+.splash h3,
+.name_s h3 {
   position: relative;
   color: #6e3e9b;
   text-transform: uppercase;
   font-weight: 300;
   display: flex;
   animation: intro1 0.4s forwards linear;
-  font-size: 0.7em;
+  font-size: 1em;
 }
-.splash h3 strong {
+.splash h3 strong,
+.name_s h3 strong {
   display: flex;
   margin-left: 4px;
   font-weight: 800;
-  color: #48AC62;
+  color: rgba(110, 62, 155, 0.4);
 }
-.splash h3 strong::before, .splash h3 strong::after {
+.splash h3 strong::before, .splash h3 strong::after,
+.name_s h3 strong::before,
+.name_s h3 strong::after {
   content: ".";
   display: flex;
   font-family: dosis !important;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .splash h3 {
+  .splash h3,
+.name_s h3 {
     font-size: 1.9vw;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .splash h3 {
+  .splash h3,
+.name_s h3 {
     font-size: 1.9vw;
   }
 }
@@ -1036,22 +1035,22 @@ input {
 }
 
 .danger-alert {
-  background-color: rgba(253, 168, 168, 0.4);
-  border: 0.3px solid #fc7676;
+  background-color: rgba(233, 181, 181, 0.328);
+  border: 0.3px solid rgba(221, 142, 142, 0.928);
 }
 .danger-alert small,
 .danger-alert span {
-  color: #ed0505;
+  color: rgba(182, 54, 54, 0.928);
 }
 .danger-alert a {
   text-decoration: underline;
   font-size: small;
-  color: #d40505;
+  color: rgba(162, 48, 48, 0.928);
   margin-left: 10px;
 }
 .danger-alert .close {
-  border-color: #ed0505;
-  color: #ed0505;
+  border-color: rgba(182, 54, 54, 0.928);
+  color: rgba(182, 54, 54, 0.928);
 }
 
 .warning-alert {
@@ -1238,7 +1237,7 @@ input {
   font-size: 1.5em;
 }
 .c-f-u-content .c-header h3 {
-  color: #2B8DD0;
+  color: #6a2bd0;
   text-align: center;
   text-transform: uppercase;
   font-weight: 300;
@@ -1248,7 +1247,7 @@ input {
 .c-f-u-content .c-header strong {
   margin-left: 4px;
   font-weight: 800;
-  color: #48AC62;
+  color: #b29ec9;
 }
 .c-f-u-content .c-header strong::before,
 .c-f-u-content .c-header strong::after {
