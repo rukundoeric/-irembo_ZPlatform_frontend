@@ -72,14 +72,14 @@ function SignUp({ alert: defaultAlert }) {
         ValidateInputs();
       } else {
         setStatus('pending');
-        const data = { email, password, role: 'PATIENT' };
+        const data = { email, password };
         signUp(data, (err, data) => {
+          console.log(err?.response, data);
           if (err) {
             setStatus('fail');
             const resScode = err?.response?.status;
             if (resScode === 400 || resScode === 409) {
-              setEmailErrors(err?.response.data && [{ ...err.response.data.error.email }]);
-              setPasswordErrors(err?.response.data && [{ ...err.response.data.error.password }]);
+              handleShowAlert({ type: 'err', message: err?.response?.data?.error?.message });
             } else {
               handleShowAlert({ type: 'err', message: 'Something went wrong. please try again latter' });
             }
