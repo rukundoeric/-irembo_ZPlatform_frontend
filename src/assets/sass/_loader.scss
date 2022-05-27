@@ -35,7 +35,8 @@
   }
 }
 
-.splash {
+.splash,
+.name_s {
   h3 {
     position: relative;
     color: $pColor;
@@ -43,13 +44,13 @@
     font-weight: 300;
     display: flex;
     animation: intro1 0.4s forwards linear;
-    font-size: .7em;
+    font-size: 1em;
 
     strong {
       display: flex;
       margin-left: 4px;
       font-weight: 800;
-      color: $color-accent-2;
+      color: transparentize($pColor, $amount: .6);
 
       &::before,
       &::after {
