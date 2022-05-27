@@ -5,8 +5,8 @@ export default function Splash() {
     <div className="splash empty-container text-center">
       <div className="empty-content">
         <h3 className="mt-3">
-          DOT
-          <strong>PHARMA</strong>
+          Z
+          <strong>PLATFORM</strong>
         </h3>
       </div>
     </div>
