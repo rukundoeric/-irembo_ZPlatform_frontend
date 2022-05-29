@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable no-console */
 /* eslint-disable max-len */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
