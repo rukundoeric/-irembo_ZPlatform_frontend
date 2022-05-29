@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export default {
   // auth
   login_api: '/auth/login',
@@ -16,10 +17,13 @@ export default {
 
   // Profile
   my_profile_api: '/user/profile',
-  update_profile: '/update-profile',
-  r_account_verification: '/account-verification',
+  update_profile: '/user/update-profile',
+  r_account_verification: '/user/account-verification',
 
   // for admin
-  get_a_v_requests: '/get-verify-account-requests',
-  verify_account: '/verify-account/:request_id',
+  get_a_v_requests: '/user/get-verify-account-requests',
+  verify_account: request_id => `/user/verify-account/${request_id}`,
+
+  // upload directories
+  images_directory: '/upload',
 };

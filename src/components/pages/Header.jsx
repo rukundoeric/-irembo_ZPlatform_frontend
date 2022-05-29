@@ -1,14 +1,11 @@
 /* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import key from 'uniqid';
 import ProfilePic from '../shared/ProfilePic';
 import useLogout from '../../hooks/useLogout';
+import useGlobalState from '../../hooks/useGlobalState';
 
 function MenuItem({
   item: {
@@ -39,6 +36,10 @@ function MenuItem({
 function Header() {
   const logout = useLogout();
   const navigate = useNavigate();
+  const location = useLocation();
+  const pathname = location?.pathname;
+  const { appState: { user } } = useGlobalState();
+  const [userInfo, setUserInfo] = useState(user);
   const menuItems = [
     {
       name: 'Profile',
@@ -51,6 +52,15 @@ function Header() {
       handleOnclick: () => logout(),
     },
   ];
+  if (user?.role?.split('.')[1] === '1') {
+    menuItems.splice(1, 0, {
+      name: 'Verification requests',
+      icon: 'bi bi-person',
+      handleOnclick: () => navigate('/verification-requests'),
+    });
+  }
+  const name = !userInfo?.profile?.first_name ? userInfo?.email : `${userInfo?.profile?.first_name} ${userInfo?.profile?.last_name}`;
+  useEffect(() => { setUserInfo(user); }, [user, pathname]);
   return (
     <div className="admin-header">
       <header className="p-3">
@@ -62,13 +72,19 @@ function Header() {
                 <strong>PLATFORM</strong>
               </h3>
             </div>
-            <div>
-              <form className="d-none d-md-block px-3">
-                <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
-              </form>
-            </div>
             <div className="dropdown">
-              <ProfilePic />
+              <div
+                className="profile-pic-button d-flex align-items-center justify-content-center py-2 px-3"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div className="d-block d-md-none"><span><i className="bi bi-list" /></span></div>
+                <div className="d-none d-md-block"><span><i className="bi bi-person" /></span></div>
+                <div className="px-2 d-none d-md-block"><small>{name}</small></div>
+                <div className="px-2"><ProfilePic user={userInfo} /></div>
+                <div className="d-none d-md-block"><span><i className="bi bi-chevron-down" /></span></div>
+              </div>
               <ul className="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                 {menuItems.map(item => (<MenuItem key={key()} item={item} />))}
               </ul>

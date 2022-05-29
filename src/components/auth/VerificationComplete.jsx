@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-console */
 /* eslint-disable max-len */
 /* eslint-disable no-nested-ternary */
@@ -10,16 +11,19 @@ import Loader from '../shared/Loader';
 import VerificationFailed from './VerificationFailed';
 import useAuth from '../../hooks/useAuth';
 import { verifyUser } from '../../api';
+import useGlobalState from '../../hooks/useGlobalState';
 
 function SignUpVerificationComple() {
   const [status, setStatus] = useState('pending');
   const { setAuth } = useAuth();
+  const { setAppState } = useGlobalState();
   const location = useLocation();
   const navigate = useNavigate();
-  const handleRedirect = response => {
+  const handleRedirect = ({ access_token, user }) => {
     setTimeout(() => {
-      setAuth({ ...response });
-      navigate('/');
+      setAuth({ access_token });
+      setAppState({ user });
+      navigate('/profile/edit');
     }, 8000);
   };
 

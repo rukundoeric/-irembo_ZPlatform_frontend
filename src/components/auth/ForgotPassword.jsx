@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 /* eslint-disable brace-style */
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useRef } from 'react';
 import {
   Email,

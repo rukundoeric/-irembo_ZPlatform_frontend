@@ -1,10 +1,7 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable eqeqeq */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
-/* eslint-disable brace-style */
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import QueryString from 'query-string';

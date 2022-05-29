@@ -3,15 +3,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
-// import useAuth from '../../hooks/useAuth';
+import Path from '../shared/Path';
 
 export default function Dashboard() {
-  // const { auth } = useAuth();
   return (
-    <main className="admin d-flex">
+    <main className="d-flex">
       <div className="sid-content flex-grow-1">
         <Header />
-        <div className="p-3">
+        <Path />
+        <div className="p-3 container">
           <Outlet />
         </div>
       </div>

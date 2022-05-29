@@ -3,7 +3,6 @@
 /* eslint-disable max-len */
 /* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
@@ -12,11 +11,13 @@ import {
 import { Button, ProgressBar } from '../shared/Elements';
 import { ContentHead } from '../shared/Contents';
 import useAuth from '../../hooks/useAuth';
+import useGlobalState from '../../hooks/useGlobalState';
 import Alert from '../shared/Alert';
 import { logIn } from '../../api';
 
 function Login({ alert: defaultAlert }) {
   const { setAuth } = useAuth();
+  const { setAppState } = useGlobalState();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || '/';
@@ -34,10 +35,11 @@ function Login({ alert: defaultAlert }) {
   const handlePasswordChange = e => {
     setPassword(e.target.value);
   };
-  const handleLoginSuccess = response => {
+  const handleLoginSuccess = ({ access_token, user }) => {
     setEmailErrors(undefined);
     setPasswordErrors(undefined);
-    setAuth({ ...response });
+    setAuth({ access_token });
+    setAppState({ user });
     navigate(from, { replace: true });
   };
 

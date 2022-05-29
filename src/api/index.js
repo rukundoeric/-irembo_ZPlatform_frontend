@@ -1,8 +1,17 @@
 import {
-  logIn, signUp, refreshToken,
+  logIn,
+  signUp,
+  refreshToken,
 } from './_auth';
 import {
-  verifyUser, resentVerification, getMyProfile, passwordReset,
+  verifyUser,
+  resentVerification,
+  getMyProfile,
+  passwordReset,
+  updateProfile,
+  requestAccountVerification,
+  getVerificationRequests,
+  verifyAccount,
 } from './_user';
 
 export {
@@ -13,4 +22,8 @@ export {
   refreshToken,
   getMyProfile,
   passwordReset,
+  updateProfile,
+  requestAccountVerification,
+  getVerificationRequests,
+  verifyAccount,
 };

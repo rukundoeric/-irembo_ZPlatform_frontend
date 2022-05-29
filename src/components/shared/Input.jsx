@@ -11,21 +11,6 @@ import React, { useState } from 'react';
 import key from 'uniqid';
 import { Link } from 'react-router-dom';
 
-function Text() {
-  return (
-    <div className="col-12 input-text-c">
-      <label htmlFor="username" className="form-label">Username</label>
-      <div className="input-group has-validation">
-        <input type="text" className="form-control" id="username" placeholder="Username" required />
-        <span className="input-group-text">@</span>
-        <div className="invalid-feedback">
-          Your username is required.
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Email({
   value, label, handleOnChange, errors, labeled,
 }) {
@@ -153,6 +138,17 @@ function TCPRemember({ handleRemember, errors }) {
   );
 }
 
+function Toggle({ handleOnChange, value }) {
+  return (
+    <div className="toggle-switch">
+      <label className="switch">
+        <input type="checkbox" onChange={handleOnChange} checked={value} />
+        <span className="slider round" />
+      </label>
+    </div>
+  );
+}
+
 export {
-  Text, Email, Password, Submit, TCPPAgree, TCPRemember,
+  Email, Toggle, Password, Submit, TCPPAgree, TCPRemember,
 };

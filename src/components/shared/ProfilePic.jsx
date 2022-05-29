@@ -1,37 +1,37 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable camelcase */
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 
-function ProfilePic({ profile: { pic, name } }) {
-  const profileIcon = name.split(' ').map(n => n.substring(0, 1)).join('').substring(0, 2);
+function ProfilePic({ user: { profile }, width, height }) {
+  const profileIcon = profile?.first_name ? `${profile?.first_name[0]}${profile?.last_name[0]}`.toLocaleUpperCase() : '@';
+  const [photo, setPhoto] = useState(profile?.photo);
+
+  const handleLoadImageError = () => {
+    setPhoto(undefined);
+  };
+
   return (
-    <a
+    <div
       className="d-block profile-pic link-dark text-decoration-none"
       id="dropdownUser1"
       data-bs-toggle="dropdown"
       aria-expanded="false"
     >
-      {pic ? (
-        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" className="rounded-circle" />
+      {photo ? (
+        <img src={photo} alt="mdo" width={width} height={height} onError={handleLoadImageError} className="rounded-circle" />
       ) : (
-        <span className="p-2 rounded-circle profile-pic-n-p">
+        <div style={{ width, height }} className="rounded-circle profile-pic-n-p d-flex justify-content-center align-items-center">
           <strong>{profileIcon}</strong>
-        </span>
+        </div>
       )}
-    </a>
+    </div>
   );
 }
 
 ProfilePic.defaultProps = {
-  profile: {
-    pic: undefined,
-    name: 'Eric Rukundo',
-    email: 'ericrukundo05@gmail.com',
-  },
-  width: 40,
-  height: 40,
+  width: 32,
+  height: 32,
 };
 
 export default ProfilePic;

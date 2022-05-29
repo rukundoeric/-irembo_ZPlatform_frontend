@@ -14,7 +14,7 @@ const useLogout = () => {
     setAuth({});
     try {
       await axios(logout_api);
-      navigate('/');
+      navigate('/login');
     } catch (err) {
       console.log(err);
     }

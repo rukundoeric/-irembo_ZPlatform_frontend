@@ -1,4 +1,3 @@
-/* eslint-disable no-lone-blocks */
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import key from 'uniqid';
@@ -7,22 +6,19 @@ import Signup from './auth/Signup';
 import ForgotPassword from './auth/ForgotPassword';
 import ApplyPasswordReset from './auth/ApplyPasswordReset';
 import NotFound from './shared/NotFound';
-import Empty from './shared/Empty';
 import Verification from './auth/VerificationComplete';
-// import Services from './home/fragments/Services';
-// import HealthTips from './home/fragments/HealthTips';
 import Layout from './layouts/Layout';
 import RequireAuth from './routes/RequireAuth';
-// import RequireAuthAdmin from './routes/RequireAuthAdmin';
-import UserHome from './pages/Home';
+
+import Profile, { ProfileInfo } from './pages/fragments/Profile';
+import ProfileSetting from './pages/fragments/ProfileSettings';
+import EditProfile from './pages/fragments/EditProfile';
+import ProfileVerifyAccount from './pages/fragments/ProfileVerifyAccount';
+import Home from './pages/Home';
 
 import PersistLogin from './auth/PersistLogin';
-// import Empty from './shared/Empty';
 
-// Admin components
-import Dashboard from './admin/Dashboard';
-// import AdminHome from './admin/fragments/Home';
-// import AdminUsers from './admin/fragments/Users';
+import VerificationsRequest from './admin/fragments/VerificationsRequest';
 
 function App() {
   return (
@@ -40,21 +36,20 @@ function App() {
 
         {/* Private Routes */}
         <Route element={<PersistLogin />}>
-          <Route element={<RequireAuth />}>
-            <Route path="/" key={key()} element={<UserHome />}>
-              <Route path="/profile" key={key()} element={<Empty />} />
+          <Route element={<RequireAuth roles={[1, 0]} />}>
+            <Route path="/" key={key()} element={<Home />}>
+              <Route path="/profile" key={key()} element={<Profile />}>
+                <Route path="/profile" key={key()} element={<ProfileInfo />} />
+                <Route path="/profile/edit" key={key()} element={<EditProfile />} />
+                <Route path="/profile/verify" key={key()} element={<ProfileVerifyAccount />} />
+                <Route path="/profile/settings" key={key()} element={<ProfileSetting />} />
+              </Route>
             </Route>
           </Route>
-
-          {/* Admin routes */}
-          {/* Public routes for admin */}
-          <Route path="/dashboard" key={key()} element={<Dashboard />}>
-            {/* Private routes for admin */}
-            {/* <Route element={<RequireAuthAdmin />}> */}
-            {/* <Route element={<RequireAuthAdmin />}>
-              <Route path="/dashboard/home" key={key()} element={<AdminHome />} />
-              <Route path="/dashboard/a-c-requests" key={key()} element={<AdminUsers />} />
-            </Route> */}
+          <Route element={<RequireAuth roles={[1, 1]} />}>
+            <Route path="/" key={key()} element={<Home />}>
+              <Route path="/verification-requests" key={key()} element={<VerificationsRequest />} />
+            </Route>
           </Route>
 
         </Route>

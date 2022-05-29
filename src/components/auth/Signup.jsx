@@ -74,7 +74,6 @@ function SignUp({ alert: defaultAlert }) {
         setStatus('pending');
         const data = { email, password };
         signUp(data, (err, data) => {
-          console.log(err?.response, data);
           if (err) {
             setStatus('fail');
             const resScode = err?.response?.status;

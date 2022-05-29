@@ -78,14 +78,9 @@
 }
 
 .admin-header {
-  // position: absolute;
-  // right: 0;
-  // // left: 0;
-  // top: 0;
   z-index: 4 !important;
   background: $color-white !important;
   box-shadow: $main_shadow !important;
-  // border: 1px solid red;
 }
 
 .dropdown-menu {
@@ -117,5 +112,13 @@
     &:hover {
       background-color: transparentize($color: $textColor-2, $amount: .9);
     }
+  }
+}
+
+
+.request-item {
+  img {
+    min-width: 100%;
+    border: 1px solid $pColor;
   }
 }

@@ -12,6 +12,10 @@ const {
   r_r_psw_rese_api,
   apply_psw_reset_api,
   my_profile_api,
+  update_profile,
+  r_account_verification,
+  get_a_v_requests,
+  verify_account,
 } = Constants;
 
 export const verifyUser = async (token, callback) => {
@@ -61,6 +65,42 @@ export const applyPasswordReset = async (info, session, callback) => {
 export const getMyProfile = async (axios, callback) => {
   try {
     const { data } = await axios.get(my_profile_api);
+    callback(null, data);
+  } catch (error) {
+    callback(error);
+  }
+};
+
+export const updateProfile = async (axios, profileData, callback) => {
+  try {
+    const { data } = await axios.put(update_profile, profileData);
+    callback(null, data);
+  } catch (error) {
+    callback(error);
+  }
+};
+
+export const requestAccountVerification = async (axios, profileData, callback) => {
+  try {
+    const { data } = await axios.post(r_account_verification, profileData);
+    callback(null, data);
+  } catch (error) {
+    callback(error);
+  }
+};
+
+export const getVerificationRequests = async (axios, callback) => {
+  try {
+    const { data } = await axios.get(get_a_v_requests);
+    callback(null, data);
+  } catch (error) {
+    callback(error);
+  }
+};
+
+export const verifyAccount = async (axios, review, callback) => {
+  try {
+    const { data } = await axios.post(verify_account(review?.request_id), review);
     callback(null, data);
   } catch (error) {
     callback(error);
