@@ -2,6 +2,11 @@ import {
   logIn,
   signUp,
   refreshToken,
+  turnOnOrOffSecondFactorAuth,
+  logInSecondFactorAuth,
+  resentOneTimePassword,
+  validateLoginToken,
+  logInWithAccessToken,
 } from './_auth';
 import {
   verifyUser,
@@ -26,4 +31,9 @@ export {
   requestAccountVerification,
   getVerificationRequests,
   verifyAccount,
+  turnOnOrOffSecondFactorAuth,
+  logInSecondFactorAuth,
+  resentOneTimePassword,
+  validateLoginToken,
+  logInWithAccessToken,
 };
