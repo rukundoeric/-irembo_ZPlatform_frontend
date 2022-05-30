@@ -186,11 +186,11 @@
   }
 
   input:checked+.slider {
-    background-color: #2196F3;
+    background-color: $pColor;
   }
 
   input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px $pColor;
   }
 
   input:checked+.slider:before {
@@ -206,5 +206,14 @@
 
   .slider.round:before {
     border-radius: 50%;
+  }
+}
+
+.l-g-token {
+  border: 1px solid rgb(193, 193, 193);
+  background-color: #ececec;
+  span {
+    color: $textColor-1;
+    font-size: small;
   }
 }
