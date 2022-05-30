@@ -45,9 +45,9 @@ Email.defaultProps = {
 };
 
 function Password({
-  value, label, handleOnChange, errors,
+  value, label, handleOnChange, errors, placeholder, ShowPassword,
 }) {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(ShowPassword);
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -62,7 +62,7 @@ function Password({
           type={showPassword ? 'text' : 'password'}
           onChange={handleOnChange}
           name="password"
-          placeholder="********"
+          placeholder={placeholder || '********'}
           required
         />
         <span className="icon px-3 py-2" onClick={handleShowPassword}>
@@ -117,17 +117,17 @@ function TCPPAgree({ handleAgree, errors }) {
   );
 }
 
-function TCPRemember({ handleRemember, errors }) {
+function LoginToken({ handleOnChange, errors }) {
   return (
     <div className={`input-text-content pt-2 d-flex flex-column ${errors && 'error'}`}>
       <div className="d-flex flex-row">
         <div className="td-st pt-2">
           <label className="agree-container">
-            <input type="checkbox" onChange={handleRemember} />
+            <input type="checkbox" onChange={handleOnChange} />
             <span className="checkmark" />
           </label>
         </div>
-        <span className="pt-2">Remember me</span>
+        <span className="pt-2">Use Personal Access Token</span>
       </div>
       {errors && (
         <div className="d-flex flex-column px-3 pt-2 error-message">
@@ -150,5 +150,5 @@ function Toggle({ handleOnChange, value }) {
 }
 
 export {
-  Email, Toggle, Password, Submit, TCPPAgree, TCPRemember,
+  Email, Toggle, Password, Submit, TCPPAgree, LoginToken,
 };
