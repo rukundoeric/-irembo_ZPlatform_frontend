@@ -44,7 +44,7 @@ export default function Alert({ info: { type, message, action }, handleCloseAler
         ) : type === 'success' ? (
           <div className="alert success-alert d-flex">
             <div className="d-flex ico">
-              <span><i className="bi bi-exclamation-circle" /></span>
+              <span><i className="bi bi-check2-circle" /></span>
             </div>
             <div className="d-flex justify-content-between d-flex flex-grow-1">
               <div>
