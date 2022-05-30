@@ -27,10 +27,6 @@ Path.defaultProps = {
       name: 'Home',
       path: '/',
     },
-    {
-      name: 'Product',
-      path: '/products',
-    },
   ],
 };
 
