@@ -3,7 +3,10 @@ export default {
   // auth
   login_api: '/auth/login',
   second_factor_auth: '/auth/second-factor-auth',
+  resend_one_time_password: 'auth/resend-one-time-password',
   refresh_token_api: '/auth/refresh-token',
+  login_with_token: '/auth/login-with-token',
+  validate_login_token: '/auth/login-with-token/validate',
   logout_api: '/auth/logout',
 
   // User
