@@ -1,6 +1,5 @@
 body {
   background-color: $sColor;
-  // background-color: rgb(244, 244, 244);
   margin: 0;
   font-family:
     -apple-system,
@@ -369,6 +368,10 @@ input {
       animation: 1.6s ease infinite wheel-left-right !important;
     }
   }
+}
+
+.home_content {
+  background-color: white;
 }
 
 // Flaticon Icon
