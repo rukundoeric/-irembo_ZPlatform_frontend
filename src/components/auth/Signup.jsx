@@ -14,12 +14,8 @@ import { ContentHead } from '../shared/Contents';
 import VerificationSent from './VerificationSent';
 import { signUp } from '../../api';
 import Alert from '../shared/Alert';
-// import useAuth from '../../hooks/useAuth';
 
 function SignUp({ alert: defaultAlert }) {
-  // const { setAuth } = useAuth();
-  // const navigate = useNavigate();
-  // const location = useLocation();
   const [email, setEmail] = useState();
   const [status, setStatus] = useState();
   const [password, setPassword] = useState();
@@ -30,7 +26,6 @@ function SignUp({ alert: defaultAlert }) {
   const [signupSuccess, setSignupSuccess] = useState();
   const [alert, setAlert] = useState(defaultAlert);
   const [showAlert, setShowAlert] = useState(true);
-  // const from = location?.state?.from?.pathname || '/';
   const form = useRef();
   const canContinue = !!(!emailErrors && !passwordErrors && email && password && agreeToTC);
 
