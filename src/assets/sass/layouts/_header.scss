@@ -334,13 +334,12 @@
 }
 
 .path-container {
-  // border: 1px solid red;
   background-color: white;
   box-shadow: $main_shadow;
-  // @extend %path-bg-gr-1;
   a {
     color: $textColor-1;
     font-size: .9em;
+    text-transform: capitalize;
 
     &:hover {
       color: $pColor;
