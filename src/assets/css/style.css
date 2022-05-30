@@ -685,6 +685,10 @@ input {
   animation: 1.6s ease infinite wheel-left-right !important;
 }
 
+.home_content {
+  background-color: white;
+}
+
 [class^=flaticon-]:before,
 [class*=" flaticon-"]:before,
 [class^=flaticon-]:after,
@@ -1558,6 +1562,7 @@ input {
 .path-container a {
   color: #797979;
   font-size: 0.9em;
+  text-transform: capitalize;
 }
 .path-container a:hover {
   color: #6e3e9b;
@@ -1888,10 +1893,10 @@ input {
   transition: 0.4s;
 }
 .toggle-switch input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #6e3e9b;
 }
 .toggle-switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #6e3e9b;
 }
 .toggle-switch input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -1903,6 +1908,15 @@ input {
 }
 .toggle-switch .slider.round:before {
   border-radius: 50%;
+}
+
+.l-g-token {
+  border: 1px solid #c1c1c1;
+  background-color: #ececec;
+}
+.l-g-token span {
+  color: #797979;
+  font-size: small;
 }
 
 .admin {
