@@ -1,0 +1,44 @@
+$pColor: #6e3e9b;
+$sColor: #F5F5F5;
+$tColor: white;
+$pColor-2: #9a66df;
+$bColor: #e1e1e1;
+$textColor-1: #797979;
+$textColor-2: #bbb;
+$green: rgb(11, 218, 108);
+$bg1: #6e3e9b;
+$waringColor: rgb(231, 189, 98);
+$dangerColor: rgb(196, 99, 99);
+$successColor: rgb(65, 157, 90);
+$color_accent_1: lighten($pColor, 20%);
+$color_accent_2: #48AC62;
+
+//Fonts
+$poppins: "Poppins", sans-serif;
+$roboto: "Roboto", sans-serif;
+$dosis: "Dosis", sans-serif;
+
+$color_primary: $pColor;
+$color_primary_dark: rgb(52, 35, 113);;
+$color_primary_1: ligthen($pColor, 10%);
+$color_primary_2: $pColor;
+$color_primary_light:#9CD1FF;
+
+$color_white: #FFFF;
+$color_white_1: #ffffff8e;
+$color_white_2: #cecece;
+$color_white_3: #fdfdfd;
+$color_white_4: #fbfbfb;
+
+$main_shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+$second_shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+$color_gray:rgb(85, 85, 85);
+$ripple-color:  lighten($color_accent_2, 1%);
+
+
+// Fonts
+$valken: url(../fonts/Valken__.ttf);
+$dosis-font: url(../fonts/DosisSemiBold.ttf);
+$helvetica: url(../fonts/Helvetica.ttf);
+$s-s-regular: url(../fonts/SourceSansPro-Regular.ttf);
+$roboto-medium: url(../fonts/Roboto-Medium.ttf);

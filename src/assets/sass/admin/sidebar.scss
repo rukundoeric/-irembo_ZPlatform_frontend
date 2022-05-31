@@ -1,0 +1,44 @@
+.sidebar {
+	li, ul {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	.logo {
+		height: 40px;
+		position: relative;
+
+		span {
+			color: white;
+			opacity: 0.7;
+			text-transform: uppercase;
+			font-size: 20px;
+			font-family: dosis;
+			margin-left: 10px;
+		}
+	}
+
+	.bi-chevron-compact-down {
+    transform: rotate(97deg) !important;
+  }
+
+	button,
+	a {
+		&:hover {
+			background-color: transparentize($pColor, $amount: .9);
+		}
+	}
+  
+	.active {
+	  button {
+			background-color: transparentize($pColor, $amount: .6);
+		}
+	}
+
+	button {
+		color: white !important;
+		font-family: dosis;
+	}
+	a {
+		color: white;
+	}
+}

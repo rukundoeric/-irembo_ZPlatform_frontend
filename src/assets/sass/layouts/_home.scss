@@ -1,0 +1,143 @@
+.content-home {
+  // border: 1px solid red;
+  // .container {
+  //   padding: 0 !important;
+  // }
+  a {
+    color: $textColor-1;
+    font-family: dosis;
+  }
+  .j-x-i-content {
+    // .col-8,
+    // .col-4 {
+    //   // border: 1px solid red;
+    // }
+    .j-x-i-left {
+      // padding-right: 10px;
+      background-color: rgb(255, 255, 255);
+    }
+    .j-x-i-right {
+      padding-left: 10px;
+      .j-x-i-inner {
+        background-color: rgb(255, 255, 255);
+        
+        .j-x-i-right-content {
+          max-height: 500px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          // border: 1px solid red;
+        }
+        // .c-f-i-content {
+        //   max-height: calc(100vh - 25px);
+        //   overflow-y: scroll;
+        // }
+        
+        .j-x-i-right-content::-webkit-scrollbar {
+          width: 3px;
+        }
+        
+        .j-x-i-right-content::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(233, 233, 233, 0.3);
+          border-radius: 0;
+        }
+        
+        .j-x-i-right-content::-webkit-scrollbar-thumb {
+          border-radius: 0;
+          background-color: lighten($pColor, $amount: 40);
+        }
+        
+      }
+      @each $screen in $all_small_screen {
+        @media #{$screen} {
+          padding-left: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.j-x-i-header {
+   color: $textColor-1;
+  // border: 1px solid red;
+  background-color: white;
+  box-shadow: 0 0 5px 0 $bColor;
+
+  span {
+    font-size: 1em;
+    font-weight: 500;
+    font-family: dosis;
+    // font-family: dozis;
+  }
+
+  .search-btn {
+    cursor: pointer;
+    color: $textColor-1;
+  }
+}
+
+.f-x-i-clinix {
+  .f-x-i-clinix-cat {
+    .c-category-item {
+      border: 1px solid $bColor;
+      width: 20%;
+      color: $textColor-1;
+      font-weight: 500;
+      cursor: pointer;
+
+      @each $screen in $all_small_screen {
+        @media #{$screen} {
+          width: 50%;
+        }
+      }
+
+      img {
+        height: 3rem;
+      }
+
+      &:nth-of-type(odd) {
+        background-color: #FAFAFA;
+      }
+      &:nth-last-child(1) {
+        @each $screen in $all_small_screen {
+          @media #{$screen} {
+            width: 100%;
+          }
+        }
+      }
+      &:hover {
+        border: 2px solid transparentize($pColor, $amount: .5);
+      }
+    }
+    .c-category-item.active {
+      border: 4px solid transparentize($pColor, $amount: .3);
+      span {
+        color: transparentize($pColor, $amount: .1);
+      }
+    }
+  }
+  .f-x-i-clinix-cat-info {
+    // border: 1px solid red;
+    .col-6 {
+      border: 1px solid red;
+    }
+    h2 {
+      color: $textColor-1;
+      font-family: dosis;
+    }
+    img {
+    width: 80%;
+    // border: 1px solid red;
+      &:only-of-type(1) {
+        width: 80%;
+      }
+    }
+    a {
+      background-color: $pColor;
+      color: white;
+    }
+    p {
+      font-size: 1.1em;
+    }
+  }
+}

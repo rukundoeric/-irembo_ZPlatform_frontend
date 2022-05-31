@@ -1,0 +1,27 @@
+@import "https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Poppins:wght@700&family=Roboto&display=swap";
+@import "./theme";
+@import "./abstracts/screens";
+@import './abstracts/font_face';
+@import "./abstracts/extends";
+@import "./abstracts/mixins";
+@import "./abstracts/keyframes";
+@import "./shared/button";
+@import "./shared/svgs.scss";
+@import "./index";
+@import "./shared";
+@import "./progress_bar";
+@import "./loader";
+@import "./shared/alert.scss";
+@import "./empty";
+@import "./inputs";
+@import "./login";
+@import "./signup";
+@import "./layouts/header";
+@import "./layouts/home";
+@import "./profile";
+
+// admin scss
+@import "./admin/index.scss";
+@import "./admin/sidebar.scss";
+@import "./admin/users.scss";
+
