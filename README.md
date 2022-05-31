@@ -8,7 +8,7 @@ This is a client side(frontend) application for Zplatform.
 
 ## Getting Started
 - To get a local copy up and running follow these simple steps.
-  - Clone this repo: `https://github.com/rukundoeric/irembo_ZPlatform_backend.git`
+  - Clone this repo: `https://github.com/rukundoeric/-irembo_ZPlatform_frontend.git`
   - Navigate into project directory:
   - Create file called `.env`
   - Open `.env` and initialize the following environment variables:
